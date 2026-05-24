@@ -1,0 +1,24 @@
+
+# Compilados y paquetes
+/target/
+/bin/
+/out/
+*.class
+
+# Archivos del IDE (Eclipse, IntelliJ, VS Code)
+/.idea/
+/*.iml
+/.settings/
+/.project
+/.classpath
+/.vscode/
+
+# Archivos del sistema y logs
+.DS_Store
+*.log
+
+# Maven Wrapper (si no lo vas a usar)
+.mvn/
+mvnw
+mvnw.cmd
+

@@ -6,92 +6,117 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 //esto es una entidad
 @Entity
 
 //esto es una tabla de la bdd
 @Table(name = "peliculas")
 public class Pelicula {
-	
-	@Id  //va a ser la llave primaria (Primary Key) de la tabla
-	@GeneratedValue(strategy = GenerationType.IDENTITY)  //la base de datos, asígna el número que toca de forma automática".
+
+	@Id // va a ser la llave primaria (Primary Key) de la tabla
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // la base de datos, asígna el número que toca de forma
+														// automática".
 	private Long id;
 
 	@Column(nullable = false, length = 100)
 	private String nombre;
-	
+
 	@Column(nullable = false, length = 100)
 	private String director;
-	//guarda la categoria
+	// guarda la categoria
 	@Column(nullable = false, length = 100)
 	private String genero;
-	//almacena tiempo
+	// almacena tiempo
 	@Column(nullable = false)
 	private int duracion;
-	//es un interruptor de verdadero y falso
+	// es un interruptor de verdadero y falso
 	@Column(nullable = false)
 	private boolean disponible;
-	//se agrega nuevo atributo
+	// se agrega nuevo atributo
 	@Column(nullable = false)
 	private double calificacion;
-	
-	//constructor vacio
+
+	// constructor vacio
 	public Pelicula() {
-		
+
 	}
-	//constructor que recibe parametros
-	public Pelicula(String nombre, String director, String genero, int duracion, boolean disponible) {
-		
+
+	// constructor que recibe parametros
+	public Pelicula(String nombre, String director, String genero, int duracion, boolean disponible,
+			double calificacion) {
+
 		this.nombre = nombre;
 		this.director = director;
 		this.genero = genero;
 		this.duracion = duracion;
 		this.disponible = disponible;
+		this.calificacion = calificacion;
 	}
-	
-	//getters y setters
+
+	// getters y setters
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getDirector() {
 		return director;
 	}
+
 	public void setDirector(String director) {
 		this.director = director;
 	}
+
 	public String getGenero() {
 		return genero;
 	}
+
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
+
 	public int getDuracion() {
 		return duracion;
 	}
+
 	public void setDuracion(int duracion) {
 		this.duracion = duracion;
 	}
+
 	public boolean isDisponible() {
 		return disponible;
 	}
+
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
 	
-	//metodo toString
+//metodos getters y setters  para calificacion
+	public double getCalificacion() {
+		return calificacion;
+	}
+
+	public void setCalificacion(double calificacion) {
+		this.calificacion = calificacion;
+	}
+
+	// metodo toString
 	@Override
 	public String toString() {
 		return "Pelicula [id=" + id + ", nombre=" + nombre + ", director=" + director + ", genero=" + genero
-				+ ", duracion=" + duracion + ", disponible=" + disponible + "]";
+				+ ", duracion=" + duracion + ", disponible=" + disponible + ", calificacion=" + calificacion + "]";
 	}
-	
+
 }

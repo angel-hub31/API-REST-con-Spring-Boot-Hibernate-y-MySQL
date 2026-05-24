@@ -1,0 +1,190 @@
+{
+  "info": {
+    "_postman_id": "fab4cb12-39e3-48fa-8c3b-87cf5d0d5fee",
+    "name": "Peliculas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54487337",
+    "_collection_link": "https://go.postman.co/collection/54487337-fab4cb12-39e3-48fa-8c3b-87cf5d0d5fee?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear Peliculas",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"nombre\":\"El perfume\",\r\n\"director\":\"Tom Tykwer\",\r\n\"genero\":\"Drama\",\r\n\"duracion\":178,\r\n\"disponible\":true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8091/peliculas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Peliculas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/peliculas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "obtener por id",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"nombre\":\"Interstellar\",\r\n\"director\":\"Christopher Nolan\",\r\n\"genero\":\"Ciencia Ficcion\",\r\n\"duracion\":169,\r\n\"disponible\":true\r\n}\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:8091/peliculas/3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "obtener por genero",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/peliculas/genero?genero=Drama",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas",
+            "genero"
+          ],
+          "query": [
+            {
+              "key": "genero",
+              "value": "Drama"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "obtener por disponibilidad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8091/peliculas/disponible?disponible=true",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas",
+            "disponible"
+          ],
+          "query": [
+            {
+              "key": "disponible",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "actualizar pelicula",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"id\": 4,\r\n        \"nombre\": \"Spiderman vs el dunde Verde\",\r\n        \"director\": \"Sam Raimi\",\r\n        \"genero\": \"Ciencia Ficcion\",\r\n        \"duracion\": 135,\r\n        \"disponible\": false\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8091/peliculas/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": " {\r\n        \"id\": 4,\r\n        \"nombre\": \"Spiderman vs el dunde Verde\",\r\n        \"director\": \"Sam Raimi\",\r\n        \"genero\": \"Ciencia Ficcion\",\r\n        \"duracion\": 135,\r\n        \"disponible\": false\r\n    }"
+        },
+        "url": {
+          "raw": "http://localhost:8091/peliculas/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8091",
+          "path": [
+            "peliculas",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

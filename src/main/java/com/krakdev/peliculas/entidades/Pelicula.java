@@ -41,7 +41,6 @@ public class Pelicula {
 	public Pelicula() {
 
 	}
-
 	// constructor que recibe parametros
 	public Pelicula(String nombre, String director, String genero, int duracion, boolean disponible,
 			double calificacion) {

@@ -31,6 +31,9 @@ public class Pelicula {
 	//es un interruptor de verdadero y falso
 	@Column(nullable = false)
 	private boolean disponible;
+	//se agrega nuevo atributo
+	@Column(nullable = false)
+	private double calificacion;
 	
 	//constructor vacio
 	public Pelicula() {
